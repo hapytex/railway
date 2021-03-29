@@ -15,7 +15,8 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib
+  exposed-modules:
+      Lib
   build-depends:
       base >= 4.7 && < 5
     , colour >=2.3
@@ -29,10 +30,16 @@ executable railway
   hs-source-dirs:      src
   main-is: Main.hs
   default-language:    Haskell2010
+  other-modules:
+      Lib
   build-depends:
       base >= 4.7 && < 5
-    , diagrams >=1.4
     , railway
+    , colour >=2.3
+    , diagrams >=1.4
+    , diagrams-core >=1.4
+    , diagrams-lib >=1.4
+    , diagrams-svg >=1.4
 
 source-repository head
   type:     git
