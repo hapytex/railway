@@ -1,7 +1,7 @@
 {-# LANGUAGE FlexibleContexts, NoMonomorphismRestriction, TypeFamilies #-}
 
 module Lib
-    ( someFunc
+    ( station
     ) where
 
 import Data.Colour.SRGB(Colour, sRGB)
@@ -43,6 +43,3 @@ ctramdisabled = sRGB 0.3843 0.5059 0.7529
 
 station :: Diagram B
 station = circle stationRadius # fc cenabled
-
-someFunc :: IO ()
-someFunc = mainWith (station :: Diagram B)
