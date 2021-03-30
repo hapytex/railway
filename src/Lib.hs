@@ -1,7 +1,11 @@
 {-# LANGUAGE FlexibleContexts, NoMonomorphismRestriction, TypeFamilies #-}
 
 module Lib
-    ( station, startStation
+    (
+      -- * Items
+      station, startStation
+      -- * Colors
+    , cenabled, cdisabled, cwater, cbridge, croadfg, croadbg, ctramenabled, ctramdisabled
     ) where
 
 import Data.Colour.SRGB(Colour, sRGB)
