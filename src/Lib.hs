@@ -54,4 +54,4 @@ station :: Diagram B
 station = circle stationRadius `withColor` cenabled
 
 startStation :: Diagram B
-startStation = ((rect lineThickness 500 `withColor` cenabled) # moveTo (P (V2 0 (-250)))) <> station
+startStation = ((rect lineThickness 250 `withColor` cenabled) # moveTo (P (V2 0 (-125)))) <> station
