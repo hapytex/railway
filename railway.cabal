@@ -24,6 +24,7 @@ library
     , diagrams-core >=1.4
     , diagrams-lib >=1.4
     , diagrams-svg >=1.4
+    , linear >=1.21
   default-language:    Haskell2010
 
 executable railway
@@ -40,6 +41,7 @@ executable railway
     , diagrams-core >=1.4
     , diagrams-lib >=1.4
     , diagrams-svg >=1.4
+    , linear >=1.21
 
 source-repository head
   type:     git

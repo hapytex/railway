@@ -1,15 +1,21 @@
 {-# LANGUAGE FlexibleContexts, NoMonomorphismRestriction, TypeFamilies #-}
 
 module Lib
-    ( station
+    ( station, startStation
     ) where
 
 import Data.Colour.SRGB(Colour, sRGB)
 
 import Diagrams.Prelude(Diagram, (#))
+import Diagrams.Core.HasOrigin(moveTo)
+import Diagrams.Core.Points(Point(P))
+import Diagrams.Attributes(lw, none)
 import Diagrams.Backend.SVG.CmdLine(B, mainWith)
 import Diagrams.TwoD.Attributes(fc)
 import Diagrams.TwoD.Ellipse(circle)
+import Diagrams.TwoD.Shapes(rect)
+
+import Linear.V2(V2(V2))
 
 lineThickness :: Double
 lineThickness = 100
@@ -41,5 +47,11 @@ ctramenabled = sRGB 0.0000 0.2000 0.6000
 ctramdisabled :: Colour Double
 ctramdisabled = sRGB 0.3843 0.5059 0.7529
 
+withColor :: Diagram B -> Colour Double -> Diagram B
+withColor dia = ((dia # lw none) #) . fc
+
 station :: Diagram B
-station = circle stationRadius # fc cenabled
+station = circle stationRadius `withColor` cenabled
+
+startStation :: Diagram B
+startStation = ((rect lineThickness 500 `withColor` cenabled) # moveTo (P (V2 0 (-250)))) <> station

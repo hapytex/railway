@@ -1,6 +1,6 @@
 import Diagrams.Backend.SVG.CmdLine(mainWith)
 
-import Lib(station)
+import Lib(startStation)
 
 main :: IO ()
-main = mainWith station
+main = mainWith startStation
